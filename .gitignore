@@ -1,0 +1,28 @@
+target/
+*.log
+*.tmp
+*.pid
+*.class
+*.jar
+.DS_Store
+/.idea
+.vscode/
+/.mvn/
+/*.iml
+.env
+.settings/
+node_modules/
+
+# Eclipse
+.metadata/
+.recommenders/
+
+# IntelliJ
+out/
+
+# Docker
+**/docker-compose.override.yml
+
+# Local application config
+/src/main/resources/application.yml
+
