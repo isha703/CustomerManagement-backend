@@ -86,30 +86,6 @@ public class SecurityConfig {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
-//    // Replace RSA encoder/decoder with HMAC (HS256) encoder/decoder for easier testing
-//    @Bean
-//    public JwtEncoder jwtEncoder() {
-//        if (jwtSecret == null || jwtSecret.isBlank()) {
-//            throw new IllegalStateException("JWT_SECRET must be set for HS256 signing");
-//        }
-//        SecretKey key = new SecretKeySpec(jwtSecret.getBytes(StandardCharsets.UTF_8), "HmacSHA256");
-//        return new NimbusJwtEncoder(new ImmutableSecret<>(key));
-//    }
-//
-//    @Bean
-//    public JwtDecoder jwtDecoder() {
-//        if (jwtSecret == null || jwtSecret.isBlank()) {
-//            throw new IllegalStateException("JWT_SECRET must be set for HS256 decoding");
-//        }
-//        SecretKey key = new SecretKeySpec(jwtSecret.getBytes(StandardCharsets.UTF_8), "HmacSHA256");
-//        return NimbusJwtDecoder.withSecretKey(key).build();
-//    }
-    // Note: JwtEncoder/JwtDecoder beans removed — this application uses JwtService to create/verify compact HS256 JWTs
-
-//    @Bean
-//    public HttpCookieOAuth2AuthorizationRequestRepository authorizationRequestRepository() {
-//        return new HttpCookieOAuth2AuthorizationRequestRepository();
-//    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http, com.example.custmanagement.security.JwtCookieAuthenticationFilter jwtCookieFilter) throws Exception {
