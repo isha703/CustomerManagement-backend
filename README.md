@@ -5,7 +5,7 @@ Spring Boot backend for customer management with OAuth2 Resource Server (Google)
 Requirements:
 - Java 17
 - Maven
-- Docker (optional)
+
 
 Environment variables (examples):
 
@@ -15,21 +15,14 @@ Environment variables (examples):
 
 Run locally:
 
-1. Start Postgres (local or via docker-compose):
-   docker-compose up -d
 
-2. Build:
+1 Build:
    mvn -DskipTests package
 
-3. Run:
+2. Run:
    java -jar target/custmanagement-0.0.1-SNAPSHOT.jar
 
-Running in Docker:
-1. Build image:
-   docker build -t custmanagement:latest .
 
-2. Start postgres and app using docker-compose (customize to add the app service):
-   docker-compose up -d
 
 Security:
 - The application is configured as an OAuth2 Resource Server validating JWTs (e.g., from Google). Configure `spring.security.oauth2.resourceserver.jwt.issuer-uri` in your environment or profiles.
